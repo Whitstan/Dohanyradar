@@ -53,6 +53,20 @@
             android:name="id"
             app:argType="integer"
             app:nullable="false"/>
+        <action
+            android:id="@+id/navigate_to_tobacco_shops_list_from_tobacco_shop_detail"
+            app:destination="@id/tobacco_shops_list_destination"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_right"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_left"/>
+        <action
+            android:id="@+id/navigate_to_tobacco_shops_map_from_tobacco_shop_detail"
+            app:destination="@id/tobacco_shops_map_destination"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_right"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_left"/>
     </fragment>
 
 </navigation>

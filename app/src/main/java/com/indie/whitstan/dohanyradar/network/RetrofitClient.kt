@@ -10,7 +10,6 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-
 class RetrofitClient {
     fun createTobaccoShopListCall(): Call<List<TobaccoShop>?>? {
         val retrofit = Retrofit.Builder()
@@ -23,7 +22,7 @@ class RetrofitClient {
     }
 
     fun createTobaccoShopListCallById(id: Int): Call<TobaccoShopDetails>? {
-
+        
         val interceptor = HttpLoggingInterceptor()
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
         val client = OkHttpClient.Builder().addInterceptor(interceptor).build()

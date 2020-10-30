@@ -41,12 +41,20 @@ class MainActivity : AppCompatActivity() {
         bottom_nav.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.tobacco_shops_list_destination -> {
-                    if (navController.currentDestination != navController.graph[R.id.tobacco_shops_list_destination])
+                    if (navController.currentDestination == navController.graph[R.id.tobacco_shops_map_destination]){
                         navController.navigate(R.id.navigate_to_tobacco_shops_list_from_map)
+                    }
+                    else if (navController.currentDestination == navController.graph[R.id.tobacco_shop_detail_destination]) {
+                        navController.navigate(R.id.navigate_to_tobacco_shops_list_from_tobacco_shop_detail)
+                    }
                 }
                 R.id.tobacco_shops_map_destination -> {
-                    if (navController.currentDestination != navController.graph[R.id.tobacco_shops_map_destination])
+                    if (navController.currentDestination == navController.graph[R.id.tobacco_shops_list_destination]) {
                         navController.navigate(R.id.navigate_to_tobacco_shops_map_from_list)
+                    }
+                    else if (navController.currentDestination == navController.graph[R.id.tobacco_shop_detail_destination]){
+                        navController.navigate(R.id.navigate_to_tobacco_shops_map_from_tobacco_shop_detail)
+                    }
                 }
             }
             true

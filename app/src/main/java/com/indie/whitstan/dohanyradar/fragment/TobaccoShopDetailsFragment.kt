@@ -8,6 +8,8 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.indie.whitstan.dohanyradar.R
 import com.indie.whitstan.dohanyradar.databinding.FragmentTobaccoShopDetailsBinding
 import com.indie.whitstan.dohanyradar.model.TobaccoShop
@@ -31,6 +33,7 @@ class TobaccoShopDetailsFragment : Fragment() {
                 hideLoadingIndicator()
                 response.body()?.let {
                     binding.tobaccoShopDetails = it
+                    loadImageByUrl("https://dohanyradar.codevisionkft.hu/tobbacoshop/" + it.id + "/image")
                 }
             }
 
@@ -59,6 +62,13 @@ class TobaccoShopDetailsFragment : Fragment() {
 
     private fun setupFieldsData(data: TobaccoShopDetailsFragmentArgs){
        // mTitleText.text = data.title
+    }
+
+    private fun loadImageByUrl(url: String){
+        Glide.with(requireContext())
+            .load(url)
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
+            .into(tobacco_shop_image)
     }
 
     private fun showLoadingIndicator() {
