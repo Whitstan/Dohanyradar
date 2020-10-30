@@ -18,11 +18,12 @@ data class TobaccoShopDetails(
 ) {
 
     fun formattedOpenHours(): String{
-        var result = "asd"
+        var result = ""
 
-        //for (openHourEntry in openHours){
-        //    result = result + openHourEntry + "\n"
-        //}
+        // TODO: formatting texts
+        for (openHourEntry in openHours){
+            result = result + openHourEntry + "\n"
+        }
 
         return result
     }
