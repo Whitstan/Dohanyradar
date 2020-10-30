@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="tobaccoShop" type="com.indie.whitstan.dohanyradar.model.TobaccoShop" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/mainlayout"
+        android:padding="20dp">
+        <TextView
+            android:text="@{tobaccoShop.name}"
+            android:id="@+id/txtName"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:text="@{tobaccoShop.address}"
+            android:id="@+id/txtAddress"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txtName"/>
+        <TextView
+            android:text="@{tobaccoShop.isOpenAsText}"
+            android:id="@+id/txtIsOpen"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txtAddress"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

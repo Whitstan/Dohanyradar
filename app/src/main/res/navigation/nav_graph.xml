@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/tobacco_shops_list_destination">
+
+    <fragment
+        android:id="@+id/tobacco_shops_list_destination"
+        android:name="com.indie.whitstan.dohanyradar.fragment.TobaccoShopsListFragment"
+        android:label="Dohányboltok Listája" >
+        <action
+            android:id="@+id/navigate_to_tobacco_shops_map_from_list"
+            app:destination="@id/tobacco_shops_map_destination"
+            app:enterAnim="@anim/anim_slide_in_left"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_right"
+            app:popExitAnim="@anim/anim_slide_out_right"/>
+        <action
+            android:id="@+id/navigate_to_tobacco_shop_details_from_list"
+            app:destination="@id/tobacco_shop_detail_destination"
+            app:enterAnim="@anim/anim_slide_in_left"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_right"
+            app:popExitAnim="@anim/anim_slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/tobacco_shops_map_destination"
+        android:name="com.indie.whitstan.dohanyradar.fragment.TobaccoShopsMapFragment"
+        android:label="Dohányboltok Térképen" >
+        <action
+            android:id="@+id/navigate_to_tobacco_shops_list_from_map"
+            app:destination="@id/tobacco_shops_list_destination"
+            app:enterAnim="@anim/anim_slide_in_left"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_right"
+            app:popExitAnim="@anim/anim_slide_out_right"/>
+        <action
+            android:id="@+id/navigate_to_tobacco_shop_details_from_map"
+            app:destination="@id/tobacco_shop_detail_destination"
+            app:enterAnim="@anim/anim_slide_in_left"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_right"
+            app:popExitAnim="@anim/anim_slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/tobacco_shop_detail_destination"
+        android:name="com.indie.whitstan.dohanyradar.fragment.TobaccoShopDetailsFragment"
+        android:label="Dohánybolt Információk">
+        <argument
+            android:name="id"
+            app:argType="integer"
+            app:nullable="false"/>
+    </fragment>
+
+</navigation>
