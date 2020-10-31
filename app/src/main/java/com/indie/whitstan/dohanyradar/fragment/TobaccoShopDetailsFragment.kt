@@ -12,7 +12,6 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.indie.whitstan.dohanyradar.R
 import com.indie.whitstan.dohanyradar.databinding.FragmentTobaccoShopDetailsBinding
-import com.indie.whitstan.dohanyradar.model.TobaccoShop
 import com.indie.whitstan.dohanyradar.model.TobaccoShopDetails
 import com.indie.whitstan.dohanyradar.network.RetrofitClient
 import kotlinx.android.synthetic.main.fragment_tobacco_shop_details.*
@@ -56,12 +55,7 @@ class TobaccoShopDetailsFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        setupFieldsData(args)
         loadTobaccoShopDetailsData(args.id)
-    }
-
-    private fun setupFieldsData(data: TobaccoShopDetailsFragmentArgs){
-       // mTitleText.text = data.title
     }
 
     private fun loadImageByUrl(url: String){

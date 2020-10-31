@@ -32,10 +32,10 @@
         <action
             android:id="@+id/navigate_to_tobacco_shops_list_from_map"
             app:destination="@id/tobacco_shops_list_destination"
-            app:enterAnim="@anim/anim_slide_in_left"
-            app:exitAnim="@anim/anim_slide_out_left"
-            app:popEnterAnim="@anim/anim_slide_in_right"
-            app:popExitAnim="@anim/anim_slide_out_right"/>
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_right"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_left"/>
         <action
             android:id="@+id/navigate_to_tobacco_shop_details_from_map"
             app:destination="@id/tobacco_shop_detail_destination"

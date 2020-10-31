@@ -8,7 +8,7 @@
         android:icon="@drawable/ic_tobacco_shops_list"
         app:showAsAction="ifRoom"/>
     <item
-        android:id="@+id/tobacco_shop_map_destination"
+        android:id="@+id/tobacco_shops_map_destination"
         android:title="@string/menu_tobacco_shops_map"
         android:icon="@drawable/ic_tobacco_shops_map"
         app:showAsAction="ifRoom"/>

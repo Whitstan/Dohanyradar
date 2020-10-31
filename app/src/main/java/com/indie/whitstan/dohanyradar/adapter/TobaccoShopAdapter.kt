@@ -28,6 +28,7 @@ class TobaccoShopAdapter(var mTobaccoShopList: List<TobaccoShop>) : RecyclerView
 
     fun setTobaccoShopList(tobaccoShopList: List<TobaccoShop>){
         mTobaccoShopList = tobaccoShopList
+        notifyDataSetChanged()
     }
 
     inner class TobaccoShopViewHolder(private val binding: TobaccoShopRowBinding) : RecyclerView.ViewHolder(binding.root) {
