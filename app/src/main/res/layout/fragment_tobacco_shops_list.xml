@@ -7,6 +7,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".fragment.TobaccoShopsListFragment">
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/tobacco_shop_search_view"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:textCursorDrawable="@null"
+            app:iconifiedByDefault="false"
+            app:queryBackground="@null"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            app:layout_constraintBottom_toBottomOf="@id/tobacco_shop_search_view"/>
         <androidx.core.widget.ContentLoadingProgressBar
             android:id="@+id/progress_bar_tobacco_shops_list"
             style="?android:attr/progressBarStyle"
@@ -20,13 +34,15 @@
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipe_refresh_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/tobacco_shop_search_view"
             app:layout_constraintBottom_toBottomOf="parent">
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/tobacco_shops_recycle_view"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp" />
+                android:layout_height="0dp"
+                android:padding="8dp"
+                app:layout_constraintTop_toTopOf="@id/tobacco_shop_search_view"/>
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

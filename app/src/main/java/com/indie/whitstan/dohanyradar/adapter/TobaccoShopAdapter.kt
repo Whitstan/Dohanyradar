@@ -2,6 +2,8 @@ package com.indie.whitstan.dohanyradar.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.navigation.get
@@ -9,9 +11,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.indie.whitstan.dohanyradar.R
 import com.indie.whitstan.dohanyradar.databinding.TobaccoShopRowBinding
 import com.indie.whitstan.dohanyradar.model.TobaccoShop
+import java.util.*
+import kotlin.collections.ArrayList
 
+class TobaccoShopAdapter(var mTobaccoShopList: List<TobaccoShop>) : RecyclerView.Adapter<TobaccoShopAdapter.TobaccoShopViewHolder>(), Filterable {
 
-class TobaccoShopAdapter(var mTobaccoShopList: List<TobaccoShop>) : RecyclerView.Adapter<TobaccoShopAdapter.TobaccoShopViewHolder>() {
+    var tobaccoShopFilterList : List<TobaccoShop>
+
+    init {
+        tobaccoShopFilterList = mTobaccoShopList
+    }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): TobaccoShopViewHolder {
         return TobaccoShopViewHolder(
@@ -22,12 +31,40 @@ class TobaccoShopAdapter(var mTobaccoShopList: List<TobaccoShop>) : RecyclerView
     }
 
     override fun onBindViewHolder(holder: TobaccoShopViewHolder, position: Int) {
-        val shop =  mTobaccoShopList[position]
+        val shop =  tobaccoShopFilterList[position]
         holder.bind(shop)
     }
 
+    override fun getFilter(): Filter {
+        return object : Filter() {
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                val charSearch = constraint.toString()
+                tobaccoShopFilterList = if (charSearch.isEmpty()) {
+                    mTobaccoShopList
+                } else {
+                    val resultList = ArrayList<TobaccoShop>()
+                    for (row in mTobaccoShopList) {
+                        if (row.name.toLowerCase(Locale.ROOT).contains(charSearch.toLowerCase(Locale.ROOT))) {
+                            resultList.add(row)
+                        }
+                    }
+                    resultList
+                }
+                val filterResults = FilterResults()
+                filterResults.values = tobaccoShopFilterList
+                return filterResults
+            }
+
+            @Suppress("UNCHECKED_CAST")
+            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+                tobaccoShopFilterList = results?.values as ArrayList<TobaccoShop>
+                notifyDataSetChanged()
+            }
+        }
+    }
+
     fun setTobaccoShopList(tobaccoShopList: List<TobaccoShop>){
-        mTobaccoShopList = tobaccoShopList
+        tobaccoShopFilterList = tobaccoShopList
         notifyDataSetChanged()
     }
 
@@ -56,7 +93,7 @@ class TobaccoShopAdapter(var mTobaccoShopList: List<TobaccoShop>) : RecyclerView
     }
 
     override fun getItemCount(): Int {
-        return mTobaccoShopList.size
+        return tobaccoShopFilterList.size
     }
 
 }
