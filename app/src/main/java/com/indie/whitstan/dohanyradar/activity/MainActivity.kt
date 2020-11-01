@@ -3,14 +3,17 @@ package com.indie.whitstan.dohanyradar.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.get
 import androidx.navigation.ui.NavigationUI
-import com.indie.whitstan.dohanyradar.R
+
 import kotlinx.android.synthetic.main.activity_main.*
+
+import com.indie.whitstan.dohanyradar.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

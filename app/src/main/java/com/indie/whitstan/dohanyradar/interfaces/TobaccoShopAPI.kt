@@ -1,11 +1,12 @@
 package com.indie.whitstan.dohanyradar.interfaces
 
-import com.indie.whitstan.dohanyradar.model.TobaccoShop
-import com.indie.whitstan.dohanyradar.model.TobaccoShopDetails
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
+
+import com.indie.whitstan.dohanyradar.model.TobaccoShop
+import com.indie.whitstan.dohanyradar.model.TobaccoShopDetails
 
 interface TobaccoShopAPI {
     @get:GET("tobbacoshop")

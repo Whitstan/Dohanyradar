@@ -4,7 +4,5 @@
     <string name="menu_tobacco_shops_map">Térkép</string>
     <string name="error_while_loading_tobacco_shop_list">Hiba történt a dohánybolt lista adatok betöltése közben, kérjük próbálja újra később</string>
     <string name="error_while_loading_tobacco_shop_details">Hiba történt az adott dohánybolt adatainak betöltése közben, kérjük próbálja újra később</string>
-
-    <string name="maps_api_key">AIzaSyDFMswZgIdLhJR9p_cNw5b6mfHXZE96d44</string>
-
+    <string name="button_reconnect">Újracsatlakozás</string>
 </resources>

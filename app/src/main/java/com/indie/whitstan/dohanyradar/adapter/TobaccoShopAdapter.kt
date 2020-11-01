@@ -1,18 +1,22 @@
 package com.indie.whitstan.dohanyradar.adapter
 
+import java.util.*
+
+import kotlin.collections.ArrayList
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
+
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.navigation.get
 import androidx.recyclerview.widget.RecyclerView
+
 import com.indie.whitstan.dohanyradar.R
 import com.indie.whitstan.dohanyradar.databinding.TobaccoShopRowBinding
 import com.indie.whitstan.dohanyradar.model.TobaccoShop
-import java.util.*
-import kotlin.collections.ArrayList
 
 class TobaccoShopAdapter(var mTobaccoShopList: List<TobaccoShop>) : RecyclerView.Adapter<TobaccoShopAdapter.TobaccoShopViewHolder>(), Filterable {
 
@@ -61,11 +65,6 @@ class TobaccoShopAdapter(var mTobaccoShopList: List<TobaccoShop>) : RecyclerView
                 notifyDataSetChanged()
             }
         }
-    }
-
-    fun setTobaccoShopList(tobaccoShopList: List<TobaccoShop>){
-        tobaccoShopFilterList = tobaccoShopList
-        notifyDataSetChanged()
     }
 
     inner class TobaccoShopViewHolder(private val binding: TobaccoShopRowBinding) : RecyclerView.ViewHolder(binding.root) {
