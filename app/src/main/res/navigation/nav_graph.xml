@@ -15,14 +15,18 @@
             app:enterAnim="@anim/anim_slide_in_left"
             app:exitAnim="@anim/anim_slide_out_left"
             app:popEnterAnim="@anim/anim_slide_in_right"
-            app:popExitAnim="@anim/anim_slide_out_right"/>
+            app:popExitAnim="@anim/anim_slide_out_right"
+            app:popUpTo="@+id/tobacco_shops_list_destination"
+            app:popUpToInclusive="false"/>
         <action
             android:id="@+id/navigate_to_tobacco_shop_details_from_list"
             app:destination="@id/tobacco_shop_detail_destination"
             app:enterAnim="@anim/anim_slide_in_left"
             app:exitAnim="@anim/anim_slide_out_left"
             app:popEnterAnim="@anim/anim_slide_in_right"
-            app:popExitAnim="@anim/anim_slide_out_right"/>
+            app:popExitAnim="@anim/anim_slide_out_right"
+            app:popUpTo="@+id/tobacco_shops_list_destination"
+            app:popUpToInclusive="false"/>
     </fragment>
 
     <fragment
@@ -35,16 +39,16 @@
             app:enterAnim="@anim/anim_slide_in_right"
             app:exitAnim="@anim/anim_slide_out_right"
             app:popEnterAnim="@anim/anim_slide_in_left"
-            app:popExitAnim="@anim/anim_slide_out_left" />
+            app:popExitAnim="@anim/anim_slide_out_left"
+            app:popUpTo="@+id/tobacco_shops_list_destination"
+            app:popUpToInclusive="true"/>
         <action
             android:id="@+id/navigate_to_tobacco_shop_details_from_map"
             app:destination="@id/tobacco_shop_detail_destination"
             app:enterAnim="@anim/anim_slide_in_left"
             app:exitAnim="@anim/anim_slide_out_left"
             app:popEnterAnim="@anim/anim_slide_in_right"
-            app:popExitAnim="@anim/anim_slide_out_right"
-            app:popUpTo="@+id/tobacco_shop_detail_destination"
-            app:popUpToInclusive="true"/>
+            app:popExitAnim="@anim/anim_slide_out_right" />
     </fragment>
 
     <fragment
@@ -61,7 +65,9 @@
             app:enterAnim="@anim/anim_slide_in_right"
             app:exitAnim="@anim/anim_slide_out_right"
             app:popEnterAnim="@anim/anim_slide_in_left"
-            app:popExitAnim="@anim/anim_slide_out_left"/>
+            app:popExitAnim="@anim/anim_slide_out_left"
+            app:popUpTo="@+id/tobacco_shops_list_destination"
+            app:popUpToInclusive="true"/>
         <action
             android:id="@+id/navigate_to_tobacco_shops_map_from_tobacco_shop_detail"
             app:destination="@id/tobacco_shops_map_destination"
@@ -69,8 +75,8 @@
             app:exitAnim="@anim/anim_slide_out_right"
             app:popEnterAnim="@anim/anim_slide_in_left"
             app:popExitAnim="@anim/anim_slide_out_left"
-            app:popUpTo="@+id/tobacco_shops_map_destination"
-            app:popUpToInclusive="true"/>
+            app:popUpTo="@+id/tobacco_shops_list_destination"
+            app:popUpToInclusive="false"/>
     </fragment>
 
 </navigation>
