@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".fragment.TobaccoShopsListFragment">
-        <androidx.appcompat.widget.SearchView
+        <com.indie.whitstan.dohanyradar.view.EmptySubmitSearchView
             android:id="@+id/tobacco_shop_search_view"
             android:layout_width="match_parent"
             android:layout_height="50dp"
